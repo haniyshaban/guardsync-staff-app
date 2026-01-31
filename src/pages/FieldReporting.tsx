@@ -24,9 +24,10 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { BottomNav } from '@/components/BottomNav';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/contexts/AuthContext';
+import { API_BASE_URL } from '@/lib/utils';
 import type { FieldReport } from '@/types';
 
-const API_BASE = 'http://localhost:4000/api';
+const API_BASE = `${API_BASE_URL}/api`;
 
 export default function FieldReporting() {
   const navigate = useNavigate();

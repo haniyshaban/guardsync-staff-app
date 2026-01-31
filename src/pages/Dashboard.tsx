@@ -29,11 +29,12 @@ import {
 import { useAuth } from '@/contexts/AuthContext';
 import { BottomNav } from '@/components/BottomNav';
 import { useToast } from '@/hooks/use-toast';
+import { API_BASE_URL } from '@/lib/utils';
 import type { StaffAttendance } from '@/types';
 
 type ShiftType = 'morning' | 'general' | 'night';
 
-const API_BASE = 'http://localhost:4000/api';
+const API_BASE = `${API_BASE_URL}/api`;
 
 const shiftOptions: { value: ShiftType; label: string; icon: React.ReactNode; time: string }[] = [
   { value: 'morning', label: 'Morning Shift', icon: <Sun className="w-5 h-5" />, time: '6:00 AM - 2:00 PM' },

@@ -15,8 +15,12 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-primary">Loading...</div>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background">
+        <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center glow-primary mb-4">
+          <img src="/favicon.ico" alt="GuardSync" className="w-7 h-7" />
+        </div>
+        <h2 className="text-xl font-semibold text-foreground mb-2">GuardSync Staff</h2>
+        <p className="text-muted-foreground text-sm">Loading...</p>
       </div>
     );
   }

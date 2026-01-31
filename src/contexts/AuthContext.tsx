@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { Staff, StaffAttendance } from '@/types';
+import { API_BASE_URL } from '@/lib/utils';
 
 // API Configuration - points to the guardwise-platform server
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const API_ENDPOINT = `${API_BASE_URL}/api`;
 
 interface AuthContextType {
   staff: Staff | null;
@@ -36,7 +37,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
       // Call the platform server API for staff login
-      const response = await fetch(`${API_BASE_URL}/staff/login`, {
+      const response = await fetch(`${API_ENDPOINT}/staff/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
